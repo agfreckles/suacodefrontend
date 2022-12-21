@@ -6,16 +6,16 @@ import "../../static/noteslist/noteslist.scss";
 const NotesList = (props) => {
   const { isLoading, apiError, apiData } = useFetch(
     "GET",
-    "https://web-production-082d.up.railway.app/api"
+    "https://suacode-production.up.railway.app/api"
   );
   const renderNotes = () =>
-    apiData.map((note) => (
+    apiData?.map((note) => (
       <div key={note.id}>
         <Note
-          title={note.title}
-          created={note.created}
-          updated={note.updated}
-          body={note.body}
+          title={note?.title}
+          created={note?.created}
+          updated={note?.updated}
+          body={note?.body}
         />
       </div>
     ));
