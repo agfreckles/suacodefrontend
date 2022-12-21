@@ -1,8 +1,16 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
-    grid-auto-rows: minmax(100px, auto);
-    margin: 8em auto;
-    // border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 8em auto;
+
+  .link {
+    border: none;
+    box-shadow: 0.2em 1em 2em 0.4em rgb(82, 118, 97);
+    :hover{
+     background-color: aliceblue;
+    }
   }
+
+}

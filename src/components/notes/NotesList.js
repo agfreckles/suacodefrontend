@@ -2,22 +2,23 @@ import React from "react";
 import useFetch from "../../utils/useFetch";
 import Note from "./Note";
 import "../../static/noteslist/noteslist.scss";
+import { Link } from "react-router-dom";
 
-const NotesList = (props) => {
+const NotesList = () => {
   const { isLoading, apiError, apiData } = useFetch(
     "GET",
-    "https://suacode-production.up.railway.app/api"
+    "https://suacode-production.up.railway.app/api/"
   );
   const renderNotes = () =>
     apiData?.map((note) => (
-      <div key={note.id}>
+      <Link to={`/notes/${note.id}`} key={note.id} className="link">
         <Note
           title={note?.title}
           created={note?.created}
           updated={note?.updated}
           body={note?.body}
         />
-      </div>
+      </Link>
     ));
   return (
     <>
@@ -32,4 +33,5 @@ const NotesList = (props) => {
     </>
   );
 };
+// "http://127.0.0.1:8000/api/",
 export default NotesList;
