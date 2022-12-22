@@ -12,7 +12,7 @@ class NoteDetail extends React.Component {
   }
   render() {
     if (!this.props.note) {
-      return <div> Loading . . . show!! </div>;
+      return <div> Loading . . . notes...!! </div>;
     }
     const { title, body } = this.props.note;
     return (

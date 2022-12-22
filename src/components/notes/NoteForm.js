@@ -51,7 +51,7 @@ class NoteForm extends React.Component {
             component={this.renderTextArea}
             label="Enter Notes"
           />
-          <button className="ui button primary">Submit</button>
+          <button className="ui button primary">Done</button>
         </form>
       </div>
     );

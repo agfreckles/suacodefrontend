@@ -8,8 +8,10 @@
   .link {
     border: none;
     box-shadow: 0.2em 1em 2em 0.4em rgb(82, 118, 97);
+    
     :hover{
-     background-color: aliceblue;
+     background-color: rgb(246, 246, 246);
+     color: rgb(110, 96, 99);
     }
   }
 

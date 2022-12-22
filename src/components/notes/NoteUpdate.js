@@ -12,6 +12,9 @@ class NoteUpdate extends React.Component {
   onSubmit = (formValues) => {
     this.props.updateNote(this.props.params.id, formValues);
   };
+  handleChange = (formValues) => {
+    this.props.updateNote(this.props.params.id, formValues);
+  };
   render() {
     // const { id } = this.props.params;
     return (
@@ -19,6 +22,7 @@ class NoteUpdate extends React.Component {
         <h3>Edit Note</h3>
         <NoteForm
           onSubmit={this.onSubmit}
+          onChange={this.handleChange}
           initialValues={_.pick(this.props.note, "title", "body")} //Special: initialValues is provided by redux form
         />
       </div>
