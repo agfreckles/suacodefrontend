@@ -1,5 +1,11 @@
 import note from "../utils/note";
-import { CREATE_NOTE, UPDATE_NOTE, FETCH_NOTE, DELETE_NOTE, FETCH_NOTES } from "./types";
+import {
+  CREATE_NOTE,
+  UPDATE_NOTE,
+  FETCH_NOTE,
+  DELETE_NOTE,
+  FETCH_NOTES,
+} from "./types";
 
 export const createNote = (formValues) => async (dispatch, getState) => {
   const resp = await note.post("/new/", { ...formValues });
@@ -17,7 +23,7 @@ export const fetchNote = (id) => async (dispatch) => {
   const resp = await note.get(`/notes/${id}`);
   dispatch({ type: FETCH_NOTE, payload: resp.data });
 };
-export const deleteNote= (id) => async (dispatch) => {
-  await note.delete(`/delete/${id}/`);
+export const deleteNote = (id) => async (dispatch) => {
+  await note.delete(`/delete/${id}`);
   dispatch({ type: DELETE_NOTE, payload: id });
 };

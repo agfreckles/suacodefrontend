@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 class NoteDelete extends React.Component {
   componentDidMount() {
     console.log(this.props);
-    fetchNote(this.props.params.id);
+    fetchNote(this.props.note.id);
   }
   renderContent() {
     if (!this.props.note) {
