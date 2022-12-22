@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchNote } from "../../actions";
 import withNavigate from "../../utils/history";
 import "./../../static/noteslist/note-detail.scss";
@@ -27,7 +28,9 @@ class NoteDetail extends React.Component {
         </div>
         <div className="p">{body}</div>
         <div className="footer">
-          <i className="edit icon"></i>
+          <Link to={`/notes/edit/${this.props.note.id}`}>
+            <i className="edit icon"></i>
+          </Link>
           <i className="delete icon"></i>
         </div>
       </div>

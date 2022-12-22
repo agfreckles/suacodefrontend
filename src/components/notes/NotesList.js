@@ -1,3 +1,7 @@
+
+
+
+
 import React from "react";
 import useFetch from "../../utils/useFetch";
 import Note from "./Note";
@@ -11,8 +15,9 @@ const NotesList = () => {
   );
   const renderNotes = () =>
     apiData?.map((note) => (
-      <Link to={`/notes/${note.id}`} key={note.id} className="link">
+      <Link to={`/notes/edit/${note.id}`} key={note.id} className="link">
         <Note
+          id={note?.id}
           title={note?.title}
           created={note?.created}
           updated={note?.updated}
@@ -34,4 +39,5 @@ const NotesList = () => {
   );
 };
 // "http://127.0.0.1:8000/api/",
+// "https://suacode-production.up.railway.app/api/"
 export default NotesList;

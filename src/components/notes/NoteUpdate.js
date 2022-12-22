@@ -2,12 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
 import { fetchNote, updateNote } from "../../actions";
-import withNavigate from "../../history";
+import withNavigate from "../../utils/history";
 import NoteForm from "./NoteForm";
 
-class NoteEdit extends React.Component {
+class NoteUpdate extends React.Component {
   componentDidMount() {
-    // console.log(this.props.params.id);
     this.props.fetchNote(this.props.params.id);
   }
   onSubmit = (formValues) => {
@@ -34,6 +33,6 @@ const mapStateToProps = (state, ownProps) => {
 export default withNavigate(
   connect(mapStateToProps, {
     fetchNote: fetchNote,
-    editNote: updateNote,
-  })(NoteEdit)
+    updateNote: updateNote,
+  })(NoteUpdate)
 );
