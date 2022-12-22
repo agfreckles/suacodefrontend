@@ -11,7 +11,7 @@ class Notes extends React.Component {
   }
   renderNotes = () =>
     this.props.notes.map((note) => (
-      <Link to={`/notes/edit/${note.id}`} key={note.id} className="link">
+      <Link to={`/notes/${note.id}`} key={note.id} className="link">
         <Note
           id={note?.id}
           title={note?.title}

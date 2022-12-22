@@ -10,12 +10,6 @@ class NoteDetail extends React.Component {
     const { id } = this.props.params;
     this.props.fetchNote(id);
   }
-  componentDidUpdate() {
-    // this.buildPlayer();
-  }
-  componentWillUnmount() {
-    // this.player.destroy();
-  }
   render() {
     if (!this.props.note) {
       return <div> Loading . . . show!! </div>;
@@ -31,7 +25,9 @@ class NoteDetail extends React.Component {
           <Link to={`/notes/edit/${this.props.note.id}`}>
             <i className="edit icon"></i>
           </Link>
-          <i className="delete icon"></i>
+          <Link to={`/notes/delete/${this.props.note.id}`}>
+            <i className="delete icon"></i>
+          </Link>
         </div>
       </div>
     );

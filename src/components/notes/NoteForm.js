@@ -1,5 +1,5 @@
 import React from "react";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field} from "redux-form";
 import withNavigate from "./../../utils/history";
 
 class NoteForm extends React.Component {
@@ -17,6 +17,15 @@ class NoteForm extends React.Component {
       <div className="field">
         <label>{label}</label>
         <input {...input} autoComplete="off" />
+        {this.renderError(meta)}
+      </div>
+    );
+  };
+  renderTextArea = ({input, label, meta }) => {
+    return (
+      <div className="field">
+        <label>{label}</label>
+        <textarea {...input} autoComplete="off"></textarea>
         {this.renderError(meta)}
       </div>
     );
@@ -39,7 +48,7 @@ class NoteForm extends React.Component {
           />
           <Field
             name="body"
-            component={this.renderInput}
+            component={this.renderTextArea}
             label="Enter Notes"
           />
           <button className="ui button primary">Submit</button>
@@ -63,4 +72,3 @@ export default reduxForm({
   form: "noteForm",
   validate: validate,
 })(withNavigate(NoteForm));
-
